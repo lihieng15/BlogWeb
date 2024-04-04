@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+body {
+  font-family: "Charis SIL", serif;
+}
+.active {
+  @apply text-yellow-600 underline underline-offset-4;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.pagination li {
+  margin: 0 5px;
+}
+.pagination a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+}
+.pagination a:hover {
+  background-color: #eee;
+}
+.pagination li.activePagination {
+  background-color: rgb(12, 221, 82);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.active-button {
+  color: #fc3c1a;
+}
