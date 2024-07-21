@@ -10,7 +10,7 @@ const Modal = ({ isOpen, onClose }) => {
       <div className="modal-container">
         <div className="bg-green-400 text-center p-5 h-96 lg:w-[500px] rounded shadow-md">
           {/*modal content*/}
-          <h2 className="text-xl font-semibold mb-4 mt-6 mb-5 uppercase">
+          <h2 className="text-xl font-semibold mb-4 mt-6  uppercase">
             {" "}
             please login here!
           </h2>

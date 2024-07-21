@@ -30,6 +30,7 @@ const SingleBlog = () => {
           <h2 className="text-3xl mt-8 font-bold mb-4 text-blue-500 cursor-pointer">
             {title}
           </h2>
+
           <p className="mb-3 text-gray-600">
             <FaUser className="inline-flex items-center mr-2" /> {author} |{" "}
             {published_date}
