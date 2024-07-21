@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         path: "/blogs/:id",
         element: <SingleBlog />,
         loader: ({ params }) =>
-          fetch(`http://194.233.87.193:8080/api/managementteams/${params.id}`),
+          fetch(`http://localhost:5000/blogs/${params.id}`),
       },
     ],
   },

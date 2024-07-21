@@ -1,19 +1,25 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import { FaUser } from "react-icons/fa";
-import { FaClock } from "react-icons/fa6";
+import { FaUser, FaClock } from "react-icons/fa";
 import SideBar from "../components/SideBar";
 
 const SingleBlog = () => {
   const data = useLoaderData();
+
+  // Check if data is defined and has at least one item
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    return <p>No blog data available.</p>;
+  }
+
+  // Destructure with default values
   const {
-    title,
-    image,
-    category,
-    author,
-    published_date,
-    reading_time,
-    content,
+    title = "Untitled",
+    image = "",
+    category = "Unknown",
+    author = "Unknown Author",
+    published_date = "Unknown Date",
+    reading_time = "Unknown",
+    content = "No content available.",
   } = data[0];
 
   return (
@@ -23,10 +29,10 @@ const SingleBlog = () => {
           Single Blog Page
         </h1>
       </div>
-      {/* blog detail*/}
+      {/* Blog detail */}
       <div className="max-w-7xl mx-auto my-12 flex flex-col md:flex-row gap-12">
-        <div className="lg:w-3/4 mx-auto ">
-          <img src={image} alt="" className="w-full mx-auto rounded " />
+        <div className="lg:w-3/4 mx-auto">
+          <img src={image} alt={title} className="w-full mx-auto rounded" />
           <h2 className="text-3xl mt-8 font-bold mb-4 text-blue-500 cursor-pointer">
             {title}
           </h2>
@@ -38,7 +44,7 @@ const SingleBlog = () => {
           <p className="mb-3 text-gray-600">
             <FaClock className="inline-flex items-center mr-2" /> {reading_time}
           </p>
-          <p className="text-base text-gray-500 mb-6 ">{content}</p>
+          <p className="text-base text-gray-500 mb-6">{content}</p>
           <div className="text-base text-gray-500">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
@@ -69,7 +75,7 @@ const SingleBlog = () => {
             <br />
           </div>
         </div>
-        <div className="lg:w1/2">
+        <div className="lg:w-1/4">
           <SideBar />
         </div>
       </div>
