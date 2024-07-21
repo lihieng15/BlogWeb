@@ -1,0 +1,12 @@
+{
+  "name": "blog-web",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix react-blog-website\" \"npm run start --prefix modern-react-js-blog-starter-files\"",
+    "start:frontend": "cd react-blog-website && npm run dev",
+    "start:backend": "cd modern-react-js-blog-starter-files && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
